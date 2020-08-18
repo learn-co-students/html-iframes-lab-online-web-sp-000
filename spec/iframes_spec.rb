@@ -1,5 +1,3 @@
-
-
 RSpec.describe 'index.html' do
   it 'contains an <iframe> tag' do
     iframe = parsed_html.search('iframe')[0]
