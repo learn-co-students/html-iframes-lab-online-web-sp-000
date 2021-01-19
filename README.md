@@ -1,83 +1,104 @@
+# HTML Contact Form Lab
 # HTML Iframe Lab
-
 
 ## Problem Statement
 
+Business and company websites of all types and sizes typically want to provide
+multiple ways for their customers or potential customers to contact them.  One
+of the most common ways to do this is to provide a _contact form_.
 The `iframe` element displays an entire HTML file inside itself, allowing one
-HTML page to be contained within another. Before JavaScript became widely used
-in websites, _anytime_ a user clicked on a link, the entire page would refresh.
+HTML page to be contained within another. Before JavaScript became widely used,
+_anytime_ a website user clicked on a link, the entire page would refresh. To
+provide a better user experience, the `iframe` tag used to reload specific parts
+of a page without changing others. For example, when a navigation link was
+clicked, from the user's perspective, the navigation would remain the same, and
+only the iframe portion of a page would reload.
 
-The `iframe` tag can be used to reload specific parts of a page without changing
-others, providing a better user experience. For example, when a navigation link
-was clicked, the whole page would not reload: instead only the iframe portion.
+In this lab, we will practice what we've learned about HTML forms by creating a
+contact form similar to those we see on business websites.
+With JavaScript, portions of an HTML page can be added and removed
+programmatically without needing a refresh. This replaced the need for iframes
+in many websites.
 
-With JavaScript, HTML content can be added and removed programmatically without
-needing a refresh. This replaced the need for the `iframe` tag in many websites.
+Still, there are some specific uses where iframes can be very valuable. One
+example: embedded maps.   Embedded maps are a simple option for websites that
+need a custom map, and are frequently used in contact pages for businesses. In
+this case, an `iframe` can be used to contain an entire, interactive, map page
+and place it within our own websites, without the need for writing our own
+JavaScript.
 
-Still, there are some specific uses where `iframe` remains valuable. One
-example: embedded maps. Embedded maps are a simple option for websites that need
-a custom map (i.e. contact pages for businesses). An `iframe` is used to contain
-the entire interactive map page within a websites. While using an `iframe`, we
-do not need to write our own JavaScript and we can incorporate all that
-pre-built functionality neatly.
-
-In this lab, we will add an iframe to our existing HTML contact form for
-Walkies, Inc. To do this, we will be incorporating an embedded map similar to
-those we see on business websites.
-
+In this lab, we will practice what we've learned about HTML iframes by creating
+an embedded similar to those we see on business websites.
 
 ## Objectives
 
-1. Incorporate an embedded Google map from scratch
-2. Reinforce our understanding of iframes
+1. Apply our understanding of HTML forms by building a functional a contact form
+1. Create an embedded Google map from scratch
+2. Better understand what we've learned about HTML iframes and their attributes
 
+## Deliverables
+## Setting Up the Map
 
-## Incorporate an Embedded Google Map from Scratch
-
+To see and test your form in action, run `httpserver` or open `index.html` in a
+new browser tab. To test your work, run `learn`.
 Before we can get to writing HTML, we need to get a map to embed within an
 iframe.
 
+Some basic HTML has been provided for this lab, along with HTML comments on what
+is needed.  Follow the provided comments and test messages to see what is needed
+when creating the form.  At completion, your form should have:
 In your browser, head to
 [https://www.google.com/maps](https://www.google.com/maps) and search for a
-general location. For instance, a great place to walk dogs in New York City is
-`Central Park, New York, NY`.
+general location. For instance, `11 Broadway, Manhattan, NY`.
 
+* A _required_ text input for a full name with a placeholder, "Enter Name"
+* A _required_ email type input for an email address with a placeholder, "Enter Email"
+* A _tel_ type input for a telephone number with a placeholder, "Enter Telephone (optional)"
+* A text area for a user to include a message with a placeholder, "Enter Message"
+* Labels for each text input
+* A checkbox with text of your choosing
+* A submit button
 Now, click the menu icon located at the top left of the screen and select
-**Share or embed map**. 
-
-![Share or Embed Map](https://curriculum-content.s3.amazonaws.com/html-iframes/share-or-embed-map.png)
-
-Then click the **Embed map** tab.
+**Share or embed map**. Then click the **Embed map** tab.
 
 Google provides the entire iframe tag, but we will add some additional
 attributes manually. Highlight the iframe embed code and copy it to your
 clipboard. In `index.html` paste the code snippet.
 
+## Deliverables
 
-## Reinforce Our Understanding of Iframes
+### The `required` Attribute
+We've already got a basic `iframe`, but to pass all the tests, we'll need to add
+the following attributes:
 
-We've already got a basic `iframe` from Google. To pass all the tests, we'll
-need to add the following attributes:
-
-* Edit/Add a `width` attribute set to "100%"
-* Edit/Add a `height` attribute set to "400px"
+The `required` attribute will prevent the browser from submitting the form until
+all required inputs are filled in properly. This is functionality is baked into
+HTML5 for us automatically, all that is needed is to include the word 'required'
+as an attribute, without setting it to any value.
+* Add a `width` attribute set to "100%"
+* Add a `height` attribute set to "400px"
 * Change the `frameborder` attribute to "1"
 
+When an input is required, the `type` attribute (e.g., `text` vs `email`) will
+determine what the browser checks, so in the case of an email, the input must
+match the format of an email address, including the "@".
 Run `learn` to test your work and `learn submit` once you've passed all the
 tests.
 
-
 ## Conclusion
 
-The `iframe` element allows us to load another HTML page inside our own HTML
-page. It is like looking through a window from _our_ page into another page
-displaying a Google Map.
+Forms are an essential way for users to submit data to a website. Some forms,
+like search bars, only contain a single input field, but we can make them as
+complex as we need.
+The `iframe` element that allows us to load another HTML page, such as this
+simple google map page, inside our own HTML page. It is like
+looking through a window from our page into another page displaying a Google
+Map.
 
-While many uses of `iframe` tags were replaced with JavaScript, they still
+We will only be focused on building out the front end side of this form - it is
+typically up to the _backend_ of a website to decide how to handle and store
+form data when submitted, which is not within the scope of this lesson.
+While iframes have been replaced in many places with JavaScript, they still
 prove valuable in specific cases.
-
-
-## Resources 
-- [Google Maps developer documentation](https://developers.google.com/maps/documentation/embed/guide)
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/html-map-contact-form-code-along'>HTML Map Contact Form Code-along</a> on Learn.co and start learning to code for free.</p>
